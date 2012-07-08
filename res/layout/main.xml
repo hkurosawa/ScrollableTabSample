@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#0000ff"
+    android:orientation="vertical" >
+
+<android.support.v4.view.ViewPager
+    android:id="@+id/myViewPager"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+<!--
+    <android.support.v4.view.PagerTabStrip
+        android:id="@+id/pager_tab_strip"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top"
+        android:background="#ff0000"
+        android:color="#ffffff"></android.support.v4.view.PagerTabStrip>
+-->
+    <jp.imho.scrollabletabsample.MyPagerTabStrip
+        android:id="@+id/pager_tab_strip"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top"
+        android:background="#ff0000"
+        android:color="#ffffff" />
+</android.support.v4.view.ViewPager>
+
+</LinearLayout>
