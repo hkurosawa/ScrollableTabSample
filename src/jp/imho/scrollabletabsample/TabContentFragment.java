@@ -19,6 +19,11 @@ public class TabContentFragment extends Fragment {
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		if (savedInstanceState!=null) {
+			Log.i(this.toString(), "onCreate:"+savedInstanceState.getInt("pageIdx"));
+			this.pageIdx = savedInstanceState.getInt("pageIdx");			
+		}
+
 	}
 	
 	@Override
@@ -47,12 +52,19 @@ public class TabContentFragment extends Fragment {
 		super.onResume();
 		Log.i(this.toString(), "onResume:"+this.pageIdx);
 		TextView tv = (TextView)v.findViewById(R.id.textView1);
-		tv.setText("CONTENTS OF PAGE"+this.pageIdx);
+		tv.setText("CONTENTS OF PAGE "+this.pageIdx);
 	}
 
 	@Override
 	public void onStop() {
 		super.onStop();
+	}
+
+	@Override
+	public void onSaveInstanceState(Bundle outState) {
+		super.onSaveInstanceState(outState);
+		Log.i(this.toString(), "onSaveInstanceState:"+this.pageIdx);
+		outState.putInt("pageIdx", this.pageIdx);
 	}
 
 }
